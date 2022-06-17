@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="https://www.thymeleaf.org/">
+<head> 
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disquera</title>
+    <link rel="stylesheet" th:href="@{/css/index.css}">
+    <link rel="shortcut icon" th:href="@{/img/icono.png}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <p class="logo">Menu</p>
+            <nav>
+                <a href="#hero">Inicio</a>
+                <a href="#somos">Bienvenida</a>
+                <a href="#nuestrascosas">Artistas</a>
+                <a href="#caracteristicas">Beneficios</a>
+                <a th:href="@{/genero/listar}">Genero</a>
+                <a th:href="@{/album/listar}">Album</a>
+                <a th:href="@{/cancion/listar}">Cancion</a>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero">
+        <h1>Disquera<br><span class="color">Que esperas para comenzar</span></h1>
+        <form action="">
+            <button>Entra ahora</button>
+        </form>
+    </section>
+
+    <section id="somos">
+        <div class="container">
+            <div class="img-container"></div>
+                <div class="texto">
+                    <h2>Hola!!!!</h2>
+                    <p>Es un gusto saludarte, estas en la página pricipal gracias por visitarnos, somos la
+                    casa Disquera por excelecia para artistas, GRACIAS y que siga sonando por siempre la música
+                    </p>
+                </div>
+        </div>
+    </section>
+
+    <section id="nuestrascosas">
+        <div class="container">
+            <h2>Artistas</h2>
+            <div class="programas">
+                <div class="carta">
+                    <h3>Apple</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis quaerat libero fugiat eum recusandae suscipit pariatur asperiores, corporis illum temporibus error accusantium itaque iste deserunt ea natus! Dolorum, iste unde.</p>
+                    <button>Mas info</button>
+                </div>
+                <div class="carta">
+                    <h3>Microsoft</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis quaerat libero fugiat eum recusandae suscipit pariatur asperiores, corporis illum temporibus error accusantium itaque iste deserunt ea natus! Dolorum, iste unde.</p>
+                    <button>Mas info</button>
+                </div>
+                <div class="carta">
+                    <h3>Samsung</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis quaerat libero fugiat eum recusandae suscipit pariatur asperiores, corporis illum temporibus error accusantium itaque iste deserunt ea natus! Dolorum, iste unde.</p>
+                    <button>Mas info</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="caracteristicas">
+        <div class="container">
+            <ul>
+                <li>✔️ Licencia por el uso de la música y audio de nuestros artistas</li>
+                <li>✔️ Licencias por derechos de autor</li>
+                <li>✔️ Imagen de nuestros artistas en cualquier proyecto</li>
+                <li>✔️ Live Streamings para el anuncio de Marcas</li>
+                <li>✔️ Merchandise con la imagen de nuestros artistas</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="aplica">
+        <h2>Listo para unirte?</h2>
+        <form action="">
+            <button>Que esperas contactanos!</button>
+        </form>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; Johan Estiven Fonseca Gomez</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="https://www.thymeleaf.org/"> 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link th:href="@{https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css}" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css}">
+
+    <link rel="shortcut icon" th:href="@{/img/icono.png}">
+    <style>
+        body{
+            background-color: #164E8A;
+        }
+        h1{
+            color: #FFFFFF;
+        }
+        td{
+            text-align: center;
+        }
+    </style>
+
+    <title>Disquera</title>
+</head>
+<body>
+
+    <h1><center>Lista de Albunes</center></h1>
+    <a type="button" class="btn btn-success" th:href="@{/album/formalbum}">Añadir Album</a>
+    <a type="button" class="btn btn-danger" th:href="@{../}">volver</a><br><br>
+
+    <div class="container">
+        <div class="table-responsive"> 
+            <table class="table table-dark table-hover">
+                <thead>
+                    <tr>
+                        <th><center> Id Album</center></th>
+                        <th><center>Nombre Album</center></th>
+                        <th><center> Año Publicacion</center></th>
+                        <th><center>Estado Album</center></th>            
+                        <th colspan="2"><center>Acciones</center></th>
+                    </tr>
+                </thead>
+
+                <tbody>       
+                        <tr th:if="${album.size>0}" th:each="c:${album}">
+                            <td th:text="${c.Id_Album}"><center><center></td>
+                            <td th:text="${c.nombre_Album}"><center></center></td>
+                            <td th:text="${c.APublicacion}"><center></center></td>
+                        
+                            <td th:if="${c.estado_Album==true}"> 
+                                <span class="badge bg-success active">Activo</span> 
+                            </td> 
+                            <td th:if="${c.estado_Album==false}"> 
+                                <span class="badge bg-danger active">Inactivo</span> 
+                            </td> 
+                            <td th:if="${c.estado_Album==true}"> 
+                                <a rol="button" class="btn btn-danger btn-sm"> Inactivar </a> 
+                            </td> 
+                            <td th:if="${c.estado_Album==false}"> 
+                                <a role="button" class="btn btn-success btn-sm"> Activar </a> 
+                            </td>
+                            
+                            
+                            <td>
+                            <a rol="button" class="btn btn-warning" th:href="@{/album/consultar}+${c.Id_Album}">
+                            <i class="fa-solid fa-pencil"></i>
+                            </a>
+
+                            <a rol="button" 
+                            class="btn btn-danger" th:href="@{/album/eliminar/} + ${c.Id_Album}" onclick="return confirm('Esta seguro de eliminar esta disquera?');">
+                            <i class="fa-solid fa-trash"></i> 
+                            </a>
+                            
+                            </td>
+                                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+      <script th:src="@{https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js}" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+      <script th:src="@{https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js}" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>      
+      <script th:src="@{/js/main.js}"></script>
+      <script th:src="@{/js/inactivar.js}"></script>
+      <script th:src="@{/js/cambiar.js}"></script>
+      <script th:src="@{//cdn.jsdelivr.net/npm/sweetalert2@11}"></script>
+</body>
+</html>
